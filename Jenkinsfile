@@ -3,7 +3,7 @@ node {
          checkout scm
      }
      stage('Build image') {
-         app = docker.build("unn-project/mynginx7")
+         app = docker.build("unn-project/mynginx0904")
          
      }
      stage('Push image') {
