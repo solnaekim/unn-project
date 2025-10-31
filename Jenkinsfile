@@ -3,11 +3,11 @@ node {
          checkout scm
      }
      stage('Build image') {
-         app = docker.build("unn-project/mynginx0904")
+         app = docker.build("unn-project/nginx-test-1031")
          
      }
      stage('Push image') {
-         docker.withRegistry('https://ec2-3-36-90-173.ap-northeast-2.compute.amazonaws.com/', 'harbor-reg') {
+         docker.withRegistry('https://ec2-54-180-107-122.ap-northeast-2.compute.amazonaws.com/', 'harbor-reg') {
              app.push("${env.BUILD_NUMBER}")
              app.push("latest")
          }
